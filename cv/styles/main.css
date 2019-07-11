@@ -1,0 +1,136 @@
+html, body {
+  font-family: "Lato", "Tahoma", sans-serif;
+  font-size: 16px;
+  color: #222222;
+  
+  background: #181818;
+}
+
+.clear {
+  clear: both;
+}
+
+p {
+  margin-bottom: 20px;
+  
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444444;
+}
+
+.content {
+  max-width: 1024px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  
+  background-color: #f3f3f3;
+}
+
+header {
+  padding: 20px;
+  
+  background: #ededed;
+  border-bottom: 2px solid #cf8a05;
+}
+
+.photo-area {
+  float: left;
+  margin-right: 30px;
+}
+
+.photo-area img {
+  border-radius: 20px;
+}
+
+.name h1 {
+  float: left;
+  margin-top: 100px;
+  
+  font-family: "Rokkitt", "Tahoma", sans-serif;
+  font-size: 2.6em;
+  font-weight: 700;
+}
+
+.contact-details {
+  float: right;
+  margin-top: 50px;
+  
+  font-size: 1.5em;
+}
+
+.contact-details ul li a {
+  color: #444444; 
+  text-decoration: none;
+}
+
+.contact-details ul li a:hover {
+  color: #cf8a05;
+}
+
+.main {
+  padding: 0 40px;
+}
+
+section {
+  padding: 20px 0 0;
+  border-top: 1px solid #dedede;
+}
+
+section:first-child {
+  border-top: 0;
+}
+
+section:last-child {
+  padding: 20px 0 10px;
+}
+
+.section-title {
+  float: left;
+  width: 25%;
+}
+
+.section-content {
+  float: right;
+  width: 72.5%;
+}
+
+.section-title h1 {
+  font-family: "Rokkitt", "Tahoma", sans-serif;
+  font-style: italic;
+  font-size: 1.5em;
+  color: #cf8a05;
+}
+
+.section-content h2 {
+  margin-bottom: -2px;
+  font-family: "Rokkitt", "Tahoma", sans-serif;
+  font-size: 1.5em;
+}
+
+.skills {
+  margin-bottom: 20px;
+  column-count:3;
+ 
+  font-size: 1em;
+  color: #444444;
+}
+
+.langs {
+  margin-top: 5px;
+  margin-bottom: 25px;
+
+  font-size: 1em;
+  color: #444444;
+}
+
+.sub-details {
+  margin-bottom: 3px;
+	
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+article {
+  border-top: 1px solid #dedede;
+}
