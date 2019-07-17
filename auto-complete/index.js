@@ -1,17 +1,19 @@
 module.exports = {
-  createAutoComplete: function(data) {
-	  
-	  const f = function solution(input){
-		  if (Array.isArray(input) && array.length) {
-			  let output = [];
-			  for (let i = 0; i < data.length; i++) {
-				  if (data[i].toLowerCase().startsWith(input.toLowerCase())) {
-					  output.push(data[i]);
-					  }
+	createAutoComplete: function(data) {
+		return function(input) {
+			
+			let output = [];
+			
+			if (Array.isArray(data) && data.length && input && input.length) {
+				let str = input.toLowerCase();
+				for (let i = 0; i < data.length; i++) {
+					if (data[i].toLowerCase().startsWith(str)) {
+						output.push(data[i]);
+					}
 				}
-		return output;
-		} else { return []; }
-	}	
-	return f;	  
-  }
+				return output;
+			}
+			return output;
+		}  
+	}
 };
