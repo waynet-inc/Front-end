@@ -1,59 +1,23 @@
-function Builder(n) {
-    this.value = n;
-}
+import IntBuilder from "./IntBuilder.js"
+import StringBuilder from "./StringBuilder.js"
 
-Builder.prototype.plus = function(...n) { 
-    this.value = n.reduce((a, b) => a + b, this.value);
-    return this;
-}
+IntBuilder.random(10, 100);          // 42;
 
-Builder.prototype.minus = function(...n) { 
-    if (typeof this.value === "number") {
-        this.value -= n.reduce((a, b) => a + b);
-    } else if (typeof this.value === "string") {
-        this.value = this.value.slice(0, -n);
-    }
-    return this;
-}
+let intBuilder = new IntBuilder(10); // 10;
+intBuilder
+  .plus(2, 3, 2)                     // 17;
+  .minus(1, 2)                       // 14;
+  .multiply(2)                       // 28;
+  .divide(4)                         // 7;
+  .mod(3)                            // 1;
+  .get();                            // -> 1;
 
-Builder.prototype.multiply = function(n) {
-    const temp = this.value;
-    for (let i = 1; i < n; i++) {
-        this.value += temp;
-    }
-    return this;
-}
-
-Builder.prototype.divide = function(n) {
-    if (typeof this.value === "number") {
-        this.value = (this.value - this.value % n) / n;
-    } else if (typeof this.value === "string") {
-        this.value = this.value.slice(0, Math.floor(this.value.length/n) + 1);
-    }
-    return this;
-}
-
-Builder.prototype.get = function() { return this.value; }
-
-
-class IntBuilder extends Builder {
-    constructor(num = 0) {
-        super(num);
-        //this.value = num;
-    }
-
-    static random(from, to) {
-        this.value = Math.floor(Math.random() * (to + 1 - from)) + from;
-        return this.value;
-    }
-
-    //multiply(n) {
-    //    this.value *= n;
-    //    return this;
-    //}
-
-    mod(n) {
-        this.value %= n;
-        return this;
-    }
-}
+  let strBuilder = new StringBuilder('Hello'); // 'Hello';
+strBuilder
+  .plus(' all', '!')                         // 'Hello all!'
+  .minus(4)                                  // 'Hello '
+  .multiply(3)                               // 'Hello Hello Hello '
+  .divide(4)                                 // 'Hell';
+  .remove('l')                               // 'He';
+  .sub(1,1)                                  // 'e';
+  .get();
