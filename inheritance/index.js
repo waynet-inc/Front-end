@@ -36,14 +36,24 @@ Builder.prototype.divide = function(n) {
 Builder.prototype.get = function() { return this.value; }
 
 
-
 class IntBuilder extends Builder {
     constructor(num = 0) {
         super(num);
+        //this.value = num;
+    }
+
+    static random(from, to) {
+        this.value = Math.floor(Math.random() * (to + 1 - from)) + from;
+        return this.value;
     }
 
     //multiply(n) {
     //    this.value *= n;
     //    return this;
     //}
+
+    mod(n) {
+        this.value %= n;
+        return this;
+    }
 }
