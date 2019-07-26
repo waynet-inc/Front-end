@@ -34,3 +34,16 @@ Builder.prototype.divide = function(n) {
 }
 
 Builder.prototype.get = function() { return this.value; }
+
+
+
+class IntBuilder extends Builder {
+    constructor(num = 0) {
+        super(num);
+    }
+
+    //multiply(n) {
+    //    this.value *= n;
+    //    return this;
+    //}
+}
