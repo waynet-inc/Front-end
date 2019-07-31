@@ -17,8 +17,40 @@
  *  ]
  */
 function createCompassPoints() {
-    throw new Error('Not implemented');
-    var sides = ['N','E','S','W'];  // use array of cardinal directions only!
+    return [
+        { abbreviation : 'N',     azimuth : 0.00 },
+        { abbreviation : 'NbE',   azimuth : 11.25 },
+        { abbreviation : 'NNE',   azimuth : 22.50 },
+        { abbreviation : 'NEbN',   azimuth : 33.75 },
+        { abbreviation : 'NE',   azimuth : 45.00 },
+        { abbreviation : 'NEbE',   azimuth : 56.25 },
+        { abbreviation : 'ENE',   azimuth : 67.50 },
+        { abbreviation : 'EbN',   azimuth : 78.75 },
+        { abbreviation : 'E',   azimuth : 90.00 },
+        { abbreviation : 'EbS',   azimuth : 101.25 },
+        { abbreviation : 'ESE',   azimuth : 112.50 },
+        { abbreviation : 'SEbE',   azimuth : 123.75 },
+        { abbreviation : 'SE',   azimuth : 135.00 },
+        { abbreviation : 'SEbS',   azimuth : 146.25 },
+        { abbreviation : 'SSE',   azimuth : 157.50 },
+        { abbreviation : 'SbE',   azimuth : 168.75 },
+        { abbreviation : 'S',   azimuth : 180.00 },
+        { abbreviation : 'SbW',   azimuth : 191.25 },
+        { abbreviation : 'SSW',   azimuth : 202.50 },
+        { abbreviation : 'SWbS',   azimuth : 213.75 },
+        { abbreviation : 'SW',   azimuth : 225.00 },
+        { abbreviation : 'SWbW',   azimuth : 236.25 },
+        { abbreviation : 'WSW',   azimuth : 247.50 },
+        { abbreviation : 'WbS',   azimuth : 258.75 },
+        { abbreviation : 'W',   azimuth : 270.00 },
+        { abbreviation : 'WbN',   azimuth : 281.25 },
+        { abbreviation : 'WNW',   azimuth : 292.50 },
+        { abbreviation : 'NWbW',   azimuth : 303.75 },
+        { abbreviation : 'NW',   azimuth : 315.00 },
+        { abbreviation : 'NWbN',   azimuth : 326.25 },
+        { abbreviation : 'NNW',   azimuth : 337.50 },
+        { abbreviation : 'NbW',   azimuth : 348.75 },
+    ];
 }
 
 
