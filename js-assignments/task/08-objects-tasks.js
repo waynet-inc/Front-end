@@ -23,7 +23,12 @@
  *    console.log(r.getArea());   // => 200
  */
 function Rectangle(width, height) {
-    throw new Error('Not implemented');
+    this.width = width;
+    this.height = height;
+}
+
+Rectangle.prototype.getArea = function() {
+    return this.width * this.height;
 }
 
 
@@ -38,7 +43,7 @@ function Rectangle(width, height) {
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
 function getJSON(obj) {
-    throw new Error('Not implemented');
+    return JSON.stringify(obj);
 }
 
 
@@ -54,7 +59,7 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-    throw new Error('Not implemented');
+    return Object.setPrototypeOf(JSON.parse(json), proto);
 }
 
 
@@ -107,35 +112,51 @@ function fromJSON(proto, json) {
  */
 
 const cssSelectorBuilder = {
-
-    element: function(value) {
-        throw new Error('Not implemented');
+    
+    value: '',
+ 
+    stringify() {
+        const res = this.value;
+        this.value = '';
+        return res;
     },
 
-    id: function(value) {
-        throw new Error('Not implemented');
+    element(str) {
+        this.value += str;
+        return this;
     },
 
-    class: function(value) {
-        throw new Error('Not implemented');
+    id(str) {
+        this.value += '#' + str;
+        return this;
     },
 
-    attr: function(value) {
-        throw new Error('Not implemented');
+    class(str) {
+        this.value += '.' + str;
+        return this;
     },
 
-    pseudoClass: function(value) {
-        throw new Error('Not implemented');
+    attr(str) {
+        this.value += '[' + str + ']';
+        return this;
     },
 
-    pseudoElement: function(value) {
-        throw new Error('Not implemented');
+    pseudoClass(str) {
+        this.value += ':' + str;
+        return this;
     },
 
-    combine: function(selector1, combinator, selector2) {
-        throw new Error('Not implemented');
+    pseudoElement(str) {
+        this.value += '::' + str;
+        return this;
     },
-};
+
+    combine(a, str, b) {
+        throw new Error('Not implemented');
+        //this.value = `${a.stringify()} ${str} ${b.stringify()}`;
+        //return this;
+    },
+}
 
 
 module.exports = {
