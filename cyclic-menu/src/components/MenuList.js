@@ -1,4 +1,4 @@
-import "./MenuList.css"
+import "./styles/MenuList.css"
 import { MenuItem } from "./MenuItem";
 import { items } from "./Items";
 

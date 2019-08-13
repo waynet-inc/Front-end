@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import { MenuList } from "./MenuList";
 
 export class App {

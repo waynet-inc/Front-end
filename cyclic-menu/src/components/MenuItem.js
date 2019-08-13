@@ -1,4 +1,4 @@
-import "./MenuItem.css";
+import "./styles/MenuItem.css";
 
 export class MenuItem {
     constructor(container, items) {
