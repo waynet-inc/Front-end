@@ -2,13 +2,18 @@ import "./styles/MenuList.css"
 import { MenuItem } from "./MenuItem";
 import { items } from "./Items";
 
+const KEYS = {
+    ARROW_LEFT: "ArrowLeft",
+    ARROW_RIGHT: "ArrowRight"
+}
+
 export class MenuList {
     constructor(container) {
         this.container = container;
         this.list;
         this.item;
         this.nodes = [];
-        this.len;
+        this.length;
         this.counter = 0;
     }
     
@@ -20,16 +25,17 @@ export class MenuList {
         this.container.appendChild(this.list);
 
         this.nodes = this.list.querySelectorAll("a");
-        this.len = this.nodes.length;
+        this.length = this.nodes.length;
         
+        document.addEventListener("load", this.makeFocus());
         this.list.addEventListener("focus", () => this.makeFocus());
 
         this.list.addEventListener("keydown", (event) => {
             switch (event.key) {
-                case "ArrowLeft":
+                case KEYS.ARROW_LEFT:
                     this.prev();
                     break;
-                case "ArrowRight":
+                case KEYS.ARROW_RIGHT:
                     this.next();
                     break;
             }
@@ -45,13 +51,13 @@ export class MenuList {
     prev() {
         this.nodes[this.counter].setAttribute("tabindex", -1);
         if (--this.counter < 0) {
-            this.counter = this.len - 1;
+            this.counter = this.length - 1;
         }
     }
 
     next() {
         this.nodes[this.counter].setAttribute("tabindex", -1);
-        if (++this.counter >= this.len) {
+        if (++this.counter >= this.length) {
             this.counter = 0;
         }
     }
