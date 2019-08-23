@@ -31,9 +31,9 @@ describe('CustomLodash: ', () => {
             expect(() => _.chunk()).toThrow();
         });
 
-        it(': if first param is not an array, method should throw an error!', () => {
-            expect(() => _.chunk(1024, 5)).toThrow();
-            expect(() => _.chunk({user: 'barney'}, 5)).toThrow();
+        it(': if first param is not an array, method should return an empty array!', () => {
+            expect(_.chunk(1024, 5)).toEqual([]);
+            expect(_.chunk({user: 'barney'}, 5)).toEqual([]);
         });
         
         it(': if size < 0, method should return an empty array!', () => {
@@ -61,9 +61,13 @@ describe('CustomLodash: ', () => {
             expect(_.compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
         });
 
-        it(': if the param is not an array, method should throw an error!', () => {
-            expect(() => _.compact('12345')).toThrow();
-            expect(() => _.compact({user: 'barney'})).toThrow();
+        it(': if the param is string, method should use it like array!', () => {
+            expect(_.compact('123')).toEqual(['1', '2', '3']);
+        });
+
+        it(': if the param is not an array, method should return an empty array!', () => {
+            expect(_.compact({user: 'barney'})).toEqual([]);
+            expect(_.compact(1024)).toEqual([]);
         });
 
         it(': if the param is omitted, method should throw an error!', () => {
@@ -97,9 +101,9 @@ describe('CustomLodash: ', () => {
             expect(_.drop([1, 2, 3], -2)).toEqual([1, 2, 3]);
         });
 
-        it(': if the first param is not an array, method should throw an error!', () => {
-            expect(() => _.drop({user: 'barney'})).toThrow();
-            expect(() => _.drop(1024)).toThrow();
+        it(': if the first param is not an array, method should return an empty array!', () => {
+            expect(_.drop({user: 'barney'})).toEqual([]);
+            expect(_.drop(1024)).toEqual([]);
         });
 
         it(': if the params is omitted, method should throw an error!', () => {
@@ -146,9 +150,9 @@ describe('CustomLodash: ', () => {
             expect(_.dropWhile([0, 1, 2])).toEqual([0, 1, 2]);
         });
 
-        it(': if the first param is not an array, method should throw an error!', () => {
-            expect(() => _.dropWhile({user: 'barney'})).toThrow();
-            expect(() => _.dropWhile(1024)).toThrow();
+        it(': if the first param is not an array, method should return an empty array!', () => {
+            expect(_.dropWhile({user: 'barney'})).toEqual([]);
+            expect(_.dropWhile(1024)).toEqual([]);
         });
 
         it(': if the params is omitted, method should throw an error!', () => {
@@ -180,11 +184,12 @@ describe('CustomLodash: ', () => {
 
         it(': if the second param is < 0, the number of elements to take should be 0!', () => {
             expect(_.take([1, 2, 3], -5)).toEqual([]);
+            expect(_.take([1, 2, 3], -1)).toEqual([]);
         });
 
-        it(': if the first param is not an array, method should throw an error!', () => {
-            expect(() => _.take({user: 'barney'})).toThrow();
-            expect(() => _.take(1024)).toThrow();
+        it(': if the first param is not an array, method should return an empty array!', () => {
+            expect(_.take({user: 'barney'})).toEqual([]);
+            expect(_.take(1024)).toEqual([]);
         });
 
         it(': if the params is omitted, method should throw an error!', () => {
@@ -228,8 +233,9 @@ describe('CustomLodash: ', () => {
               ]);
         });
 
-        it(': if the first param is not an array or iterable object, method should throw an error!', () => {
-            expect(() => _.filter(1024)).toThrow();
+        it(': if the first param is not an array or iterable object, method should return an empty array!', () => {
+            expect(_.filter(1024)).toEqual([]);
+            expect(_.filter(true)).toEqual([]);
         });
 
         it(': if the params is omitted, method should throw an error!', () => {
@@ -321,7 +327,7 @@ describe('CustomLodash: ', () => {
         });
 
         it(': if the last param is < 0, fromIndex should be max(fromIndex + length, 0)', () => {
-            expect(_.includes([1, 2, 3], 1, -2)).toBeFalsy();
+            expect(_.includes([1, 2, 3, 4], 1, -2)).toBeFalsy();
             expect(_.includes([1, 2, 3], 1, -4)).toBeTruthy();
         });
 
@@ -330,8 +336,9 @@ describe('CustomLodash: ', () => {
             expect(_.includes([1, 2, 3])).toBeFalsy();
         });
 
-        it(': if the first param is not a collection, method should throw an error!', () => {
-            expect(() => _.includes(1024, 5)).toThrow();
+        it(': if the first param is not a collection, method should return false!', () => {
+            expect(_.includes(1024, 5)).toBeFalsy();
+            expect(_.includes(10, 10)).toBeFalsy();
         });
 
         it(': if the params is omitted, method should throw an error!', () => {
@@ -368,6 +375,7 @@ describe('CustomLodash: ', () => {
             expect(_.map([1, 2])).toEqual([1, 2]);
             expect(_.map({user: 'abc'})).toEqual(['abc']);
             expect(_.map({user: 'abc', name: 'def'})).toEqual(['abc', 'def']);
+            expect(_.map('abc')).toEqual(['a', 'b', 'c']);
         });
 
         it(': if the second param is not a func or iteratee, method should throw an error!', () => {
@@ -375,12 +383,14 @@ describe('CustomLodash: ', () => {
             expect(() => _.map({user: 'abc'}, NaN)).toThrow();
         });
 
-        it(': if the first param is not a collection, method should throw an error!', () => {
-            expect(() => _.map(1024)).toThrow();
+        it(': if the first param is not a collection, method should return an empty array!', () => {
+            expect(_.map(1024)).toEqual([]);
+            expect(_.map(false)).toEqual([]);
         });
 
         it(': if the params is omitted, method should throw an error!', () => {
             expect(() => _.map()).toThrow();
+            expect(() => _.map(undefined)).toThrow();
         });
 
     });
