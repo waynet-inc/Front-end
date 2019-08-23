@@ -372,6 +372,7 @@ describe('CustomLodash: ', () => {
 
         it(': if the second param is not a func or iteratee, method should throw an error!', () => {
             expect(() => _.map({user: 'abc'}, 5)).toThrow();
+            expect(() => _.map({user: 'abc'}, NaN)).toThrow();
         });
 
         it(': if the first param is not a collection, method should throw an error!', () => {
@@ -647,4 +648,30 @@ describe('CustomLodash: ', () => {
         });
 
     });
+
+    /**
+     * Utility functions:
+     * 
+     **/
+
+    /**
+     * 
+     * @function _.iteratee([func=_.identity])
+     * @param [func=_.identity] (*): The value to convert to a callback.
+     * @returns (Function): Returns the callback.
+     * 
+     */
+
+    describe('_.iteratee', () => {
+
+        it('should return function if param is function!', () => {
+            const f = (e) => e * 4; 
+            expect(_.iteratee(f)).toEqual(f);
+        });
+        
+        it('should return callback function!', () => {
+            expect(_.iteratee()).toEqual(_.identity);
+        });
+    });
+
 });
