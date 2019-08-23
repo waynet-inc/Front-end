@@ -338,8 +338,145 @@ describe('CustomLodash: ', () => {
 
     /**
      * 
-     * 
+     * @function _.map(collection, [iteratee=_.identity])
+     * @param {Array|Object} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @returns {Array} Returns the new mapped array.
      * 
      */
+
+    describe('_.map ', () => {
+
+        it('should creates an array of values by running each element in collection thru iteratee', () => {
+            const f = (n) => n ** 2;
+
+            const users = [
+                { 'user': 'barney' },
+                { 'user': 'fred' }
+              ];
+    
+            expect(_.map([4, 8], f)).toEqual([16, 64]);
+            expect(_.map({ 'a': 4, 'b': 8 }, f)).toEqual([16, 64]);
+            expect(_.map(users, 'user')).toEqual(['barney', 'fred']);
+        });
+
+        it(': if the second param is omitted, should return array of values', () => {
+            expect(_.map([1, 2])).toEqual([1, 2]);
+            expect(_.map({user: 'abc'})).toEqual(['abc']);
+            expect(_.map({user: 'abc', name: 'def'})).toEqual(['abc', 'def']);
+        });
+
+        it(': if the second param is not a func or iteratee, method should throw an error', () => {
+            expect(() => _.map({user: 'abc'}, 5)).toThrow();
+        });
+
+        it(': if the first param is not a collection, method should throw an error', () => {
+            expect(() => _.map(1024)).toThrow();
+        });
+
+        it(': if the params is omitted, method should throw an error', () => {
+            expect(() => _.map()).toThrow();
+        });
+
+    });
+
+    /**
+     * 
+     * @function _.zip([arrays])
+     * @param {...Array} [arrays] The arrays to process.
+     * @returns {Array} Returns the new array of grouped elements.
+     * 
+     */
+
+    describe('_.zip ', () => {
+
+        it('should creates an array of grouped elements, the each of which contains the corresponding elements by order', () => {
+            expect(_.zip(['a', 'b'], [1, 2], [true, false])).toEqual([['a', 1, true], ['b', 2, false]]);
+            expect(_.zip(['a', 'b'], [1, 2, 3], [true, false, true])).toEqual([['a', 1, true], ['b', 2, false], [undefined, 3, true]]);
+        });
+
+        it(': if the param is not an array, method should throw an error', () => {
+            expect(_.zip(1024, 'dfdsf')).toEqual([]);
+        });
+
+        it(': if the param is omitted, method should throw an error', () => {
+            expect(() => _.zip()).toThrow();
+        });
+
+    });
+
+    /**
+     * 
+     * @function _.merge(object, [sources])
+     * @param {Object} object The destination object.
+     * @param {...Object} [sources] The source objects.
+     * @returns {Object} Returns `object`.
+     * 
+     */
+
+    describe('_.merge ', () => {
+
+        it('should merge two objects by same properties', () => {
+            const object = {
+                'a': [{ 'b': 2 }, { 'd': 4 }]
+              };
+               
+            const other = {
+                'a': [{ 'c': 3 }, { 'e': 5 }]
+              };
+            
+            expect(_.merge(object, other)).toEqual({ 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] });
+            expect(_.merge({'a' : 1}, other)).toEqual({ 'a': [{ 'c': 3 }, { 'e': 5 }] });
+        });
+
+        it(': if the 2nd param is omitted, method should return original destination object', () => {
+            expect(_.merge({a: 1})).toEqual({a: 1});
+        });
+
+        it(': if the 2nd param is not an object, method should return original destination object', () => {
+            expect(_.merge({a: 1}, 151)).toEqual({a: 1});
+        });
+        
+        it(': if the params are omitted, method should return undefined', () => {
+            expect(_.merge()).toBeUndefined();
+        });
+
+        it(': if the first param is not an object, method should throw an error', () => {
+            expect(() => _.merge(151, {a: 1})).toThrow();
+        });
+
+    });
+
+    /**
+     * 
+     * @function _.omit(object, [paths])
+     * @param {Object} object The source object.
+     * @param {...(string|string[])} [paths] The property paths to omit.
+     * @returns {Object} Returns the new object.
+     * 
+     */
+
+    describe('_.omit ', () => {
+
+        it('should create an object composed of the own and inherited enumerable property paths of object that are not omitted', () => {
+            const object = { 'a': 1, 'b': '2', 'c': 3 };
+
+            expect(_.omit(object, ['a', 'c'])).toEqual({ 'b': '2' });
+            expect(_.omit(object, 'c')).toEqual({ 'a': 1, 'b': '2'});
+        });
+
+        it(': if the 2nd param is omitted, method should return source object', () => {
+            expect(_.omit({ a: 'abc' })).toEqual({ a: 'abc' });
+        });
+
+        it(': if the first param is not an object, method should return an empty object', () => {
+            expect(_.omit(151, 'c')).toEqual({});
+        });
+
+        it(': if the first param is omitted, method should return an empty object', () => {
+            expect(_.omit()).toEqual({});
+        });
+
+    });
 
 });
