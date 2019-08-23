@@ -479,4 +479,79 @@ describe('CustomLodash: ', () => {
 
     });
 
+    /**
+     * 
+     * @function _.omitBy(object, [predicate=_.identity])
+     * @param {Object} object The source object.
+     * @param {Function} [predicate=_.identity] The function invoked per property.
+     * @returns {Object} Returns the new object.
+     * 
+     */
+
+    describe('_.omitBy ', () => {
+
+        it('should create an object composed of the own and inherited enumerable string keyed properties that predicate doesn\'t return truthy for', () => {
+            const object = { 'a': 1, 'b': '2', 'c': 3 };
+
+            expect(_.omitBy(object, Number.isInteger)).toEqual({ 'b': '2' });
+        });
+
+        it(': if the 2nd param is not a function, method should throw an error', () => {
+            expect(() => _.omitBy({ 'a': 1, 'b': 2 }, '1')).toThrow();
+            expect(() => _.omitBy({ 'a': 1, 'b': 2 }, 'a')).toThrow();
+        });
+
+        it(': if the 2nd param is omitted, method should return an empty object', () => {
+            expect(_.omitBy({'a': 1})).toEqual({});
+        });
+
+        it(': if the first param is not an object, method should return an empty object', () => {
+            expect(_.omitBy(151, 'c')).toEqual({});
+        });
+
+        it(': if the first param is omitted, method should return an empty object', () => {
+            expect(_.omitBy()).toEqual({});
+        });
+
+    });
+
+    /**
+     * 
+     * @function _.pick(object, [paths])
+     * @param {Object} object The source object.
+     * @param {...(string|string[])} [paths] The property paths to pick.
+     * @returns {Object} Returns the new object.
+     * 
+     */
+
+    describe('_.pick ', () => {
+
+        it('should create an object composed of the picked object properties', () => {
+            const object = { 'a': 1, 'b': '2', 'c': 3 };
+
+            expect(_.pick(object, ['a', 'c'])).toEqual({ 'a': 1, 'c': 3 });
+            expect(_.pick(object, 'b')).toEqual({ 'b': '2'});
+        });
+
+        it(': if the 2nd param is omitted, method should return an empty object', () => {
+            expect(_.pick({ 'a': 1 })).toEqual({});
+        });
+
+        it(': if the object doesn\'t have properties to pick, method should return an object with undefined properties', () => {
+            expect(_.pick({ 'a': 1 }, 'c')).toEqual({'c': undefined});
+            expect(_.pick(151, 'c')).toEqual({'c': undefined});
+        });
+
+        it(': if the 2nd param is not string, method should return an empty object', () => {
+            expect(_.pick({ 'a': 1 }, 50)).toEqual({});
+
+        });
+        
+        it(': if the first param is omitted, method should return an empty object', () => {
+            expect(_.pick()).toEqual({});
+        });
+
+    });
+
+
 });
