@@ -1,0 +1,79 @@
+@media screen and (max-width: 768px) {
+    .header {
+        display: grid;
+        
+        grid-template-columns: minmax(20px, auto) minmax(auto, 180px) minmax(auto, 250px) minmax(20px, auto);
+        grid-template-rows: 60px 60px 40px;
+        grid-template-areas: '. he1 . he4'
+                             '. he2 he2 he2'
+                             'he3 he3 he3 he3';
+    }
+
+    .promo {
+        display: grid;
+        grid-template-columns: minmax(20px, auto) minmax(auto, 180px) minmax(auto, 250px) minmax(20px, auto);
+        grid-template-rows: 230px 128px 237px;
+        grid-template-areas: '. he5 he5 .'
+                             'he7 he7 he7 he7 '
+                             '. . . .';
+    }
+
+    .menu ul li a {
+        margin: 0px 24px 0px 0px;
+    }
+
+    .menu {
+        margin: 0px 0px 0px 0px;
+        align-self: center;
+    }
+
+    .social-side {
+       display: none;
+    }
+    
+    .services {
+        display: grid;
+        grid: '.'
+              40px
+              'se11'
+              minmax(70px, auto)
+              'se12'
+              auto
+              '. '
+              40px
+              'se21'
+              minmax(70px, auto)
+              'se22'
+              auto
+              '. '
+              40px
+              'se31 '
+              minmax(70px, auto)
+              'se32 '
+              auto
+              '. '
+              40px
+              'se4 '
+              auto
+              'se5 '
+              auto / auto;
+    }
+    .privacy-title {
+        margin: 0px 25px;
+    }
+    .privacy-content {
+        margin: 0px 25px;
+    }
+    .footer-social {
+        grid-column: 2/6;
+        grid-row: 4;
+    }
+    .footer-company {
+        grid-column: 3;
+        grid-row: 3/4;
+    }
+    
+    .sub-item::before {
+        display: none;
+    }
+}

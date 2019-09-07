@@ -1,0 +1,129 @@
+@media screen and (max-width: 1200px) {
+    .services {
+        display: grid;
+        grid: '. .'
+              40px
+              'se11 se21'
+              minmax(70px, auto)
+              'se12 se22'
+              auto
+              '. .'
+              40px
+              'se31 se31'
+              minmax(70px, auto)
+              'se32 se32'
+              auto
+              '. .'
+              40px
+              'se4 se4'
+              auto
+              'se5 se5'
+              auto/minmax(40px, auto)
+              minmax(40px, auto);
+        ;
+        font-size: 14px;
+    }
+    .privacy-title {
+        border: 0px;
+    }
+    .services-security h3 {
+        text-align: center;
+    }
+    .services-security p {
+        text-align: center;
+    }
+    .security-border {
+        display: none;
+    }
+    .security {
+        grid-template-columns: auto;
+        margin: 20px 0px 0px 0px;
+    }
+    .security-button {
+        grid-area: se2_2;
+        margin: 0 auto;
+    }
+    .services-security {
+        border: 0px;
+        margin: 10px 0px 0px 0px;
+    }
+    .encryption-title {
+        border: 0px;
+    }
+    .encryption-content {
+        border: 0px;
+    }
+    .promo-bottom-border-top {
+        grid-column: 1/4;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: minmax(auto, 550px) minmax(auto, 550px);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+
+    .sponsors-title {
+        grid-column: 1/3;
+        grid-row: 1;
+        display: block;
+        text-align: center;
+    }
+ 
+    .sponsors {
+        grid-column: 1/3;
+        grid-row: 2;
+        display: grid;
+        justify-self: center;
+        border: 0px;
+    }
+
+    .contacts {
+        grid-column: 2;
+        grid-row: 4;
+        display: grid;
+        justify-self: center;
+    }
+
+    .footer-company {
+        grid-column: 1;
+        grid-row: 3;
+        display: grid;
+        justify-self: center;
+    }
+
+    .footer-legal {
+        grid-column: 2;
+        grid-row: 3;
+        display: grid;
+        justify-self: center;
+    }
+
+    .footer-links {
+        grid-column: 1;
+        grid-row: 4;
+        display: grid;
+        justify-self: center;
+    }
+
+    .footer-social {
+        grid-column: 1/3;
+        grid-row: 5;
+        display: grid;
+        justify-self: center;
+    }
+
+    .copyrights {
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .footer>div>div {
+        margin: 0 auto;
+        padding: 0;
+        border: 0px;
+    }
+    .footer>div {
+        border: 0px;
+    }
+}
