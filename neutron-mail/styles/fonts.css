@@ -108,5 +108,5 @@
   @font-face {
      font-family: 'Malaga';
      font-weight: 400;
-     src: url('../assets/fonts/MalagaOT-RegItalic.otf');
+     src: url('../assets/fonts/MalagaOT-RegItalic.otf') format('otf');
    }
