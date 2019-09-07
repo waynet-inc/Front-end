@@ -9,7 +9,7 @@
     grid-template-areas: "header"
                          "main"
                          "footer";
-    background-image: url(../assets/img/top-bg-1.png);
+    background-image: url(../assets/img/top-bg.png);
     background-repeat: no-repeat;
     background-position: top;
 }
@@ -41,20 +41,22 @@ a:hover {
 }
 
 .button {
-    background-color: #60316b;
     border: none;
-    color: white;
+    color: #FFFFFF;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 100px;
     outline: none;
+    background: linear-gradient(to top left, #6275cb, #582c7e);
+    box-shadow: 1px 4px 12px 3px #6b76a6;
+    font-weight: 700;
+    border-radius: 51px;
 }
 
 .button:hover {
-    background-color: #535353;
-    color: #fc5a5e;
+    background: linear-gradient(to right top, #6275cb, #582c7e);
+    cursor: pointer;
 }
 
 .promo-text-sub span {
@@ -122,20 +124,6 @@ a:hover {
     color: #fc5a5e;
 }
 
-.text__style_13 {
-    font-size: 24px;
-    color: #101010;
-    font-style: italic;
-    line-height: 30px;
-}
-
-.text__style_14 {
-    font-size: 16px;
-    color: #727272;
-    font-style: italic;
-    margin: 11px 0px 0px 0px;
-}
-
 .downloads-title {
     font-size: 36px;
     color: #535353;
@@ -183,7 +171,9 @@ a:hover {
     font-weight: 600;
 }
 
-/* style */
+a.footer-text::after {
+    content: ' •';
+}
 
 .border-right {
     border-right: 1px solid #b9b9b9;
@@ -210,8 +200,6 @@ a:hover {
     text-decoration-color: #dedede;
 }
 
-/* header */
-
 .logo {
     grid-area: he1;
     align-self: end;
@@ -237,14 +225,22 @@ a:hover {
     word-spacing: 7px;
 }
 
-.lang:first-child {
+.sub-item-active {
+    border-bottom: 2px solid;
     font-weight: 700;
     color: #959595;
+	border-color: #959595;
 }
 
-.lang-item::before{
-    content: '/';
+.sub-item::before{
+    content: '/ ';
     color: #959595; 
+}
+
+.sub-item-2::before{
+    content: '/';
+    color: #959595;
+    margin-right: 15px;  
 }
 
 .menu {
@@ -255,7 +251,6 @@ a:hover {
 
     font-size: 16px;
     font-weight: 500;
-    
 }
 
 .menu ul {
@@ -273,7 +268,7 @@ a:hover {
     grid-template-columns: 1fr 2fr;
     font-weight: 600;
     font-size: 15px;
-    color: #5b4295;
+    color:#5b4295;
     margin: 4px;
 }
 
@@ -288,13 +283,16 @@ a:hover {
     font-family: "Icon Pack";
     content: "\E800";
     margin-right: 3px;
-    opacity: .5;
     top: 1px;
     color: #582c7e;
 }
 
+.login:hover {
+    opacity: 0.75;
+}
+
 .button-signup {
-    padding: 10px 21px 15px 17px;
+    padding: 12px 20px 15px 20px;
     margin: 0px 0px 0px 20px;
 }
 
@@ -326,12 +324,14 @@ a:hover {
     text-align: center;
     align-self: end;
     fill: #ffffff;
+    background: radial-gradient( 310px 35px at 306px top, #0037ff, #2220);
+    background-position: center 20px;
 }
 
 .header {
     display: grid;
-    grid-template-columns: minmax(auto, 200px) minmax(auto, 200px) minmax(auto, 500px) minmax(auto, 500px) minmax(auto, 200px) minmax(auto, 200px);
-    grid-template-rows: 120px 40px;
+    grid-template-columns: minmax(auto, 200px) minmax(auto, 260px) minmax(auto, 500px) minmax(auto, 500px) minmax(auto, 200px) minmax(auto, 200px);
+    grid-template-rows: 107px 40px;
     grid-template-areas: '. he1 he1 he3 he4 .'
 						 '. he2 . . . .';
 }
@@ -346,12 +346,6 @@ a:hover {
  
 }
 
-
-
-
-
-
-
 .button-create {
     padding: 19px 63px 19px;
     font-size: 16px;
@@ -360,13 +354,13 @@ a:hover {
 }
 
 .button-apple {
-    font-size: 25px;
     padding: 8px 14px;
     margin: 0px 0px 0px 21px;
+    font-size: 21px;
 }
 
 .button-google {
-    font-size: 24px;
+    font-size: 21px;
     padding: 10px 10px 9px 14px;
     margin: 0px 0px 0px 15px;
 }
@@ -375,16 +369,21 @@ a:hover {
     padding: 0px 30px 5px 30px;
     font-size: 15.2px;
     letter-spacing: 0.3px;
-    background-color: white;
+    background-color: #FFFFFF;
     color: #676767;
+    border-radius: 100px;
+}
+
+.button-security:hover {
+    background-color: #bec2c6;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .button__style_1:hover {
     background-color: #535353;
     color: white;
 }
-
-/* security  */
 
 .privacy-title {
     grid-area: se11;
@@ -449,7 +448,6 @@ a:hover {
                          '. se5 se5 . .';
 }
 
-
 .security-border {
     grid-area: se2_1;
     height: 50%;
@@ -467,12 +465,15 @@ a:hover {
     grid-template-areas: 'se2_1 se2_2 .';
 }
 
-/* BLOG */
-
 .press {
     grid-area: bl1;
     margin: 0px 0px 0px 21px;
     font-size: 0px;
+}
+
+.press a img:hover {
+    transition: all .3s ease-in-out;
+    transform: translateY(-4px);
 }
 
 .reviews {
@@ -484,15 +485,16 @@ a:hover {
 }
 
 .reviews-text {
-    font-family: Malaga;
+    font-family: "Malaga";
     font-weight: 400;
     font-size: 26px;
     line-height: 31px;
+    color:#101010;
 }
 
 .reviews-author {
     position: relative;
-    font-family: Malaga;
+    font-family: "Malaga";
     font-size: 18px;
     margin-left: 20px;
     line-height: 59px;
@@ -532,7 +534,7 @@ a:hover {
 .reviews-slide {
     padding: 0 20px;
     position: relative;
-    width: 18%;
+    width: 19%;
     float: left;
 }
 
@@ -575,11 +577,6 @@ a:hover {
 .reviews input[type=radio]#button-3:checked~.reviews-slider>ul {
     left: -200%;
 }
-
-
-
-
-
 
 .downloads {
     grid-area: bl4;
@@ -626,6 +623,8 @@ a:hover {
     font-size: 17px;
     padding: 18px 45px 19px 49px;
     font-weight: 600;
+
+    background-image: linear-gradient(to right, #35bbe0, #5e7bea);
 }
 
 .donate-button::before {
@@ -663,6 +662,11 @@ a:hover {
     justify-self: end;
 }
 
+.links:hover {
+    transition: all .3s ease-in-out;
+    transform: translateY(-4px);
+}
+
 .promo-bottom-links img:nth-child(1) {
     margin: 149px 10px 0px 0px;
 }
@@ -687,15 +691,9 @@ a:hover {
           minmax(244px, auto) / minmax(auto, 400px)
           minmax(auto, 715px) minmax(auto, 685px);
 
-          background-image: linear-gradient(173deg, #FFFFFF 0%, #FFFFFF 35%, #D8D8D8 36%, #FFFFFF 100%);
+          background-image: linear-gradient(173deg, #FFFFFF 0%, #FFFFFF 35%, #efefef 36%, #FFFFFF 100%);
           background-repeat: no-repeat;
 }
-
-/* 
-footer
-50 230 160 100 55
-200 400 360 240 200 400
-*/
 
 .footer {
     display: grid;
