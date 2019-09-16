@@ -58,18 +58,28 @@
               'se5 '
               auto / auto;
     }
+
     .privacy-title {
         margin: 0px 25px;
     }
+
     .privacy-content {
         margin: 0px 25px;
     }
+
     .footer-social {
-        grid-column: 2/6;
-        grid-row: 4;
+        grid-column: 1/2;
+        grid-row: 5;
+        justify-self: center;
     }
+
+    .footer-legal {
+        grid-column: 1;
+        grid-row: 3/4; 
+    }
+
     .footer-company {
-        grid-column: 3;
+        grid-column: 2;
         grid-row: 3/4;
     }
     

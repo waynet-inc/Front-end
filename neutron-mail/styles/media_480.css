@@ -1,11 +1,15 @@
 @media screen and (max-width: 480px) {
     .header {
         display: grid;
-        grid-template-columns: minmax(20px, 240px) minmax(20px, 240px);
+        grid-template-columns: minmax(20px, 240px) minmax(20px, 180px);
         grid-template-rows: 60px 60px 40px;
         grid-template-areas: 'he1 he4' 
                              'he2 he2' 
                              'he3 he3';
+    }
+
+    .lang li {
+        justify-self: center;
     }
 
     .promo {
@@ -30,13 +34,80 @@
         align-self: center;
     }
 
+    
+    .services {
+        display: grid;
+        grid-template-columns: minmax(auto, 480px);
+        grid:  20px
+              'se11'
+              minmax(70px, auto)
+              'se12'
+              auto
+              '. '
+              40px
+              'se21'
+              minmax(70px, auto)
+              'se22'
+              auto
+              '. '
+              40px
+              'se31 '
+              minmax(70px, auto)
+              'se32 '
+              auto
+              '. '
+              40px
+              'se4 '
+              auto
+              'se5 '
+              auto / auto;
+    }
+
+    .services-security {
+        display: none;
+    }
+
+    .security {
+        grid-template-columns: minmax(auto, 480px);      
+    }
+
+    .promo-bottom {
+        display: grid;
+        grid-template-columns: minmax(auto, 460px); 
+        grid: '.'
+              minmax(40px, auto)
+              'bl1'
+              minmax(125px, auto)
+              'bl3'
+              minmax(266px, auto)
+              'bl4'
+              minmax(367px, auto)
+              'bl6'
+              minmax(82px, auto)
+              'bl5'
+              minmax(244px, auto) / minmax(auto, 400px)
+              minmax(auto, 715px) minmax(auto, 685px);
+    }
+
     .footer {
         display: grid;
         grid-template-columns: minmax(auto, 480px);
         grid-template-rows: auto;
     }
 
-    .sponsors-title .sponsors {
+    .sponsors-title {
+        display: none;
+    }
+
+    .sponsors {
+        display: none; 
+    }
+
+    .privacy-title {
+        display: none;
+    }
+
+    .privacy-content {
         display: none;
     }
 

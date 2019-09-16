@@ -1,5 +1,6 @@
 .content {
     max-width: 1800px;
+    min-width: 360px;
     margin: 0 auto;
 
     display: grid;
@@ -255,8 +256,12 @@ a.footer-text::after {
 
 .menu ul {
     display: grid;
-	grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     margin: 0px 12px 0px;
+}
+
+.menu ul li {
+    justify-self: center;
 }
 
 .actions {
@@ -555,15 +560,15 @@ a.footer-text::after {
 }
 
 .reviews input[type=radio]#button-1:checked~.reviews-paginator>label[for=button-1] {
-    background: black;
+    background: #000000;
 }
 
 .reviews input[type=radio]#button-2:checked~.reviews-paginator>label[for=button-2] {
-    background: black;
+    background: #000000;
 }
 
 .reviews input[type=radio]#button-3:checked~.reviews-paginator>label[for=button-3] {
-    background: black;
+    background: #000000;
 }
 
 .reviews input[type=radio]#button-1:checked~.reviews-slider>ul {
