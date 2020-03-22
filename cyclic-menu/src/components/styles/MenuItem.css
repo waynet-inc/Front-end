@@ -1,0 +1,22 @@
+.menu-list li {
+    list-style: none;
+    padding: 5px;
+}
+
+.menu-list li a {
+    padding: 6px;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.menu-list li a:hover {
+    border-bottom: 2px solid;
+    border-color: #008000;
+}
+
+.menu-list li a:focus {
+    border-bottom: 2px solid;
+    border-color: #008000;
+}
