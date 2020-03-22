@@ -1,0 +1,47 @@
+@media screen and (max-width: 1400px) {
+    .services {
+        grid-template-columns: minmax(auto, 466px) minmax(auto, 467px) minmax(auto, 466px);
+        grid-template-areas: 'se7 . . '
+                             'se11 se21 se31 '
+                             'se12 se22 se32 '
+                             'se5 se5 . ';
+    }
+
+    .security {
+        grid-template-columns: minmax(30%, 973px) 336px minmax(auto, 490px);
+    }
+
+    .promo-bottom-image {
+        display: none;
+    }
+
+    .downloads {
+        grid-column: 1/4;
+        grid-row: 4;
+        justify-self: center;
+        margin: 0 auto;
+    }
+    .promo-bottom-links {
+        grid-column: 1/4;
+        grid-row: 4;
+        display: grid;
+        align-self: end;
+        justify-self: center;
+    }
+    .downloads>div {
+        width: auto;
+        text-align: center;
+    }
+    .sponsors>div {
+        text-align: center;
+    }
+    .promo-bottom-links div {
+        width: 100%;
+    }
+    .footer-social {
+        grid-column: 2/6;
+    }
+    .footer-company {
+        grid-row: 3/4;
+    }
+}
