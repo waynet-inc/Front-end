@@ -1,0 +1,19 @@
+{
+  "name": "custom-lodash-tests",
+  "version": "1.0.0",
+  "description": "jasmine tests for custom-lodash\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "author": "waynet-inc",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.2.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-commonjs": "^1.0.0",
+    "karma-coverage": "^2.0.1",
+    "karma-jasmine": "^2.0.1"
+  }
+}
